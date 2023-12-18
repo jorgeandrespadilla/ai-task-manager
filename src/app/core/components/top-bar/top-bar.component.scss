@@ -1,0 +1,12 @@
+@import '../../../shared/styles/variables';
+@import '../../../shared/styles/mixins';
+
+.navbar-container {
+  max-width: $default-max-width;
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar-items {
+    margin-right: 6rem;
+  }
+}

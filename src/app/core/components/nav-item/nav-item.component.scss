@@ -1,0 +1,13 @@
+@import '../../../shared/styles/mixins';
+
+.nav-link {
+  border-radius: 8px;
+  padding-inline: 1rem !important;
+}
+
+@include media-breakpoint-up(lg) {
+  .nav-link {
+    max-height: 2.5rem;
+  }
+}
+
