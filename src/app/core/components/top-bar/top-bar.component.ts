@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MENU_ITEMS } from '../../../shared/constants/menu';
+import { MENU_ITEMS } from '../../../shared/constants/ui';
 import { ViewportUtils } from '../../../shared/utils';
 import { Viewport } from '../../../shared/enums/viewport.enum';
 

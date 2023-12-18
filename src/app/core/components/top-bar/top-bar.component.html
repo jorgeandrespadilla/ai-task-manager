@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-light-adaptive">
-  <div class="container-fluid navbar-container">
+<nav class="navbar navbar-expand-lg bg-light-adaptive border-bottom border-light-adaptive">
+  <div class="container">
     <a class="navbar-brand" [routerLink]="['/']">
       Gestor de tareas
     </a>
@@ -22,11 +22,14 @@
       </ul>
       <div class="d-flex flex-column flex-lg-row align-items-lg-center">
         <hr class="d-lg-none flex-grow-1 flex-lg-grow-0 mb-1" />
-        <div class="d-flex justify-content-end gap-3">
+        <div class="d-flex justify-content-end align-items-center">
           <button class="btn btn-outline d-flex align-items-center" type="button" aria-label="Abrir configuración">
             <i class="bi bi-gear fs-5"></i>
-            <span class="d-inline d-lg-none ms-2">Configuración</span>
           </button>
+          <div class="d-flex align-items-center custom-rule ms-1 me-1">
+            <div class="vr"></div>
+          </div>
+          <app-theme-picker />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MenuItem } from '../../../shared/models/menu-item.model';
+import { MenuItem } from '../../../shared/models/ui.model';
 
 @Component({
   selector: 'app-nav-item',

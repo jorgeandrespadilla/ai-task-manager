@@ -8,6 +8,10 @@
   background-color: $gray-100;
 }
 
+.border-light-adaptive {
+  border-color: $gray-600;
+}
+
 .active-bg-adaptive {
   background-color: $gray-200;
 }
@@ -15,6 +19,10 @@
 @include color-mode(dark) {
   .bg-light-adaptive {
     background-color: $gray-800;
+  }
+
+  .border-light-adaptive {
+    border-color: $gray-200;
   }
 
   .active-bg-adaptive {

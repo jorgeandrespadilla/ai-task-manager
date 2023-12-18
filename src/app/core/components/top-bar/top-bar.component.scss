@@ -1,12 +1,11 @@
-@import '../../../shared/styles/variables';
 @import '../../../shared/styles/mixins';
 
-.navbar-container {
-  max-width: $default-max-width;
+.custom-rule {
+  min-height: 24px;
 }
 
 @include media-breakpoint-up(lg) {
   .navbar-items {
-    margin-right: 6rem;
+    margin-right: 3rem;
   }
 }
