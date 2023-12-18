@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-label="Abrir/cerrar menú"
+      (click)="isMenuCollapsed = !isMenuCollapsed"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-lg-flex justify-content-lg-between" [ngbCollapse]="isMenuCollapsed">
+      <div></div>
+      <ul class="navbar-nav">
+        @for (item of menuItems; track $index) {
+          <li class="nav-item">
+            <app-nav-item [item]="item" (menuItemSelected)="isMenuCollapsed = true"></app-nav-item>
+          </li>
+        }
+      </ul>
+      <div class="d-flex">
+        <button class="btn btn-outline-success me-2" type="button">Login</button>
+        <button class="btn btn-success" type="button">Sign-up</button>
+      </div>
+    </div>
+  </div>
