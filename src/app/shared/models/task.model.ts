@@ -24,7 +24,7 @@ export interface TaskDetail extends Task {
 
 export interface AddTask {
   name: string;
-  description?: string;
+  description: string;
   completed: boolean;
   categoryId: string;
 }

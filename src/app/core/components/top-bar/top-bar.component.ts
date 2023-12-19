@@ -25,7 +25,6 @@ export class TopBarComponent {
 
   onMenuItemSelected() {
     if (ViewportUtils.isViewportAbove(Viewport.LARGE)) {
-      console.log('Viewport is above LARGE');
       return;
     }
     this.isMenuCollapsed = true;

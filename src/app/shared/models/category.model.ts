@@ -17,7 +17,7 @@ export interface Category extends BaseCategory {
 
 export interface AddCategory {
   name: string;
-  description?: string;
+  description: string;
   color: string;
 }
 
