@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h5 class="modal-title">Configuraciones</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Cerrar"
+    (click)="activeModal.dismiss()"
+  ></button>
+</div>
+
+<div class="modal-body">
+  <form [formGroup]="settingsForm">
+    <div class="form-check mt-3 mb-3">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="enableAIAssistance"
+      />
+      <label class="form-check-label">Habilitar asistencia con IA</label>
+    </div>
+    <div class="mb-3" *ngIf="settingsForm.get('enableAIAssistance')?.value">
+      <label for="openAIApiKey" class="form-label">API Key de OpenAI</label>
+      <input
+        type="text"
+        class="form-control"
+        id="openAIApiKey"
+        formControlName="openAIApiKey"
+      />
+      @if (hasFieldErrors("openAIApiKey")) {
+        <div class="form-text text-danger">
+          {{ getFieldError("openAIApiKey") }}
+        </div>
+      }
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    (click)="activeModal.close()"
+  >
+    Descartar
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="saveSettings()"
+  >
+    Guardar
+  </button>
+</div>
