@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CategoriesService } from '../../../../services/categories/categories.service';
+import { Location as RouterLocation } from '@angular/common';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { CategoriesService } from '../../../../services/categories/categories.service';
 import { FormUtils } from '../../../../shared/utils';
 
 @Component({
@@ -29,6 +30,7 @@ export class CategoryFormComponent implements OnInit {
   }
 
   constructor(
+    private location: RouterLocation,
     private fb: FormBuilder,
     private router: Router,
     private categoriesService: CategoriesService,
@@ -41,7 +43,7 @@ export class CategoryFormComponent implements OnInit {
         tap(category => {
           if (!category) {
             this.toastService.error('No se encontró la categoría');
-            this.router.navigate(['/categories']);
+            this.goToPreviousPage();
             return;
           }
           this.categoryForm.patchValue({
@@ -67,7 +69,7 @@ export class CategoryFormComponent implements OnInit {
 
   cancel() {
     this.categoryForm.reset();
-    this.router.navigate(['/categories']);
+    this.goToPreviousPage();
   }
 
   hasFieldErrors(field: string): boolean {
@@ -85,7 +87,7 @@ export class CategoryFormComponent implements OnInit {
     }).pipe(
       tap(() => {
         this.toastService.success('Categoría creada');
-        this.router.navigate(['/categories']);
+        this.goToPreviousPage();
       })
     ).subscribe();
   }
@@ -98,9 +100,16 @@ export class CategoryFormComponent implements OnInit {
     }).pipe(
       tap(() => {
         this.toastService.success('Categoría actualizada');
-        this.router.navigate(['/categories']);
       })
     ).subscribe();
+  }
+
+  private goToPreviousPage() {
+    const routerState: any = this.location.getState() ?? {};
+    if (routerState?.navigationId === 1) {
+      this.router.navigate(['/categories']);
+    }
+    this.location.back();
   }
 
 }
