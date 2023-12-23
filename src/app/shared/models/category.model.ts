@@ -2,7 +2,6 @@ interface BaseCategory {
   id: string;
   name: string;
   description?: string;
-  color: string;
 }
 
 export interface RawCategory extends BaseCategory {
@@ -18,12 +17,10 @@ export interface Category extends BaseCategory {
 export interface AddCategory {
   name: string;
   description: string;
-  color: string;
 }
 
 export interface UpdateCategory {
   id: string;
   name?: string;
   description?: string;
-  color?: string;
 }

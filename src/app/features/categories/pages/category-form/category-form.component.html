@@ -1,0 +1,42 @@
+<div class="d-flex flex-column gap-3 my-3">
+
+  <h2 class="display-7 mb-4">
+    @if (isEditing) {
+    Editar categoría
+    }
+    @else {
+    Nueva categoría
+    }
+  </h2>
+
+  <form [formGroup]="categoryForm" class="d-flex flex-column gap-3">
+    <div>
+      <label class="form-label" for="name">Nombre</label>
+      <input class="form-control" type="text" id="name" formControlName="name">
+      @if (hasFieldErrors("name")) {
+      <div class="form-text text-danger">
+        {{ getFieldError("name") }}
+      </div>
+      }
+    </div>
+    <div>
+      <label class="form-label" for="description">Descripción</label>
+      <textarea class="form-control" rows="5" id="description" formControlName="description"></textarea>
+      @if (hasFieldErrors("description")) {
+      <div class="form-text text-danger">
+        {{ getFieldError("description") }}
+      </div>
+      }
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-end mt-3 gap-3">
+    <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+      Cancelar
+    </button>
+    <button type="button" class="btn btn-primary" (click)="saveCategory()">
+      Guardar
+    </button>
+  </div>
+
+</div>

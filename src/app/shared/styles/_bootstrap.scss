@@ -6,6 +6,10 @@
 
 $gray-50: #fafafb !default;
 
+.text-light-adaptative {
+  color: $black;
+}
+
 .bg-light-adaptive {
   background-color: $gray-100;
 }
@@ -27,6 +31,11 @@ $gray-50: #fafafb !default;
 }
 
 @include color-mode(dark) {
+
+  .text-light-adaptative {
+    color: $white;
+  }
+
   .bg-light-adaptive {
     background-color: $gray-800;
   }
@@ -43,4 +52,5 @@ $gray-50: #fafafb !default;
   .active-bg-adaptive {
     background-color: $gray-600;
   }
+
 }
