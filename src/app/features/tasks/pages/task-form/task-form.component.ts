@@ -33,9 +33,9 @@ export class TaskFormComponent {
   }
 
   constructor(
-    private location: RouterLocation,
     private fb: FormBuilder,
     private router: Router,
+    private location: RouterLocation,
     private categoriesService: CategoriesService,
     private tasksService: TasksService,
     private toastService: ToastrService,

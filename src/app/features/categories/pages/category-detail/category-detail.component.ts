@@ -1,3 +1,4 @@
+import { Location as RouterLocation } from '@angular/common';
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
@@ -24,6 +25,7 @@ export class CategoryDetailComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private location: RouterLocation,
     private toastService: ToastrService,
     private modalService: NgbModal,
     private categoriesService: CategoriesService,
@@ -66,6 +68,14 @@ export class CategoryDetailComponent implements OnInit {
         this.router.navigate(['/categories']);
       })
     ).subscribe();
+  }
+
+  goBack() {
+    const routerState: any = this.location.getState() ?? {};
+    if (routerState?.navigationId === 1) {
+      this.router.navigate(['/categories']);
+    }
+    this.location.back();
   }
 
 }

@@ -30,9 +30,9 @@ export class CategoryFormComponent implements OnInit {
   }
 
   constructor(
-    private location: RouterLocation,
     private fb: FormBuilder,
     private router: Router,
+    private location: RouterLocation,
     private categoriesService: CategoriesService,
     private toastService: ToastrService,
   ) { }

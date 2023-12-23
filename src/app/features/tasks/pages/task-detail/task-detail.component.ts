@@ -1,3 +1,4 @@
+import { Location as RouterLocation } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -24,6 +25,7 @@ export class TaskDetailComponent {
 
   constructor(
     private router: Router,
+    private location: RouterLocation,
     private toastService: ToastrService,
     private modalService: NgbModal,
     private tasksService: TasksService,
@@ -58,6 +60,14 @@ export class TaskDetailComponent {
         this.router.navigate(['/tasks']);
       })
     ).subscribe();
+  }
+
+  goBack() {
+    const routerState: any = this.location.getState() ?? {};
+    if (routerState?.navigationId === 1) {
+      this.router.navigate(['/tasks']);
+    }
+    this.location.back();
   }
 
 }
