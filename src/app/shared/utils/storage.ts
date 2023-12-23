@@ -22,5 +22,9 @@ export class LocalStorageUtils {
     localStorage.removeItem(key);
   }
 
+  public static clear(): void {
+    localStorage.clear();
+  }
+
 }
 

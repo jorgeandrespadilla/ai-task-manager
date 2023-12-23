@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppSettingsService } from '../../../services/settings/app-settings.service';
 import { conditionalValidator } from '../../validators/conditional.validator';
 import { FormUtils } from '../../utils';
 import { forkJoin, take, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings-dialog',
@@ -13,6 +14,9 @@ import { forkJoin, take, tap } from 'rxjs';
   styleUrl: './settings-dialog.component.scss'
 })
 export class SettingsDialogComponent implements OnInit {
+
+  @ViewChild('confirmReset')
+  confirmReset!: ElementRef;
 
   public settingsForm = this.fb.group({
     enableAIAssistance: [false],
@@ -28,8 +32,10 @@ export class SettingsDialogComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private settingsService: AppSettingsService,
-    public activeModal: NgbActiveModal
+    private modalService: NgbModal,
+    private activeModal: NgbActiveModal
   ) { }
 
   ngOnInit(): void {
@@ -70,6 +76,24 @@ export class SettingsDialogComponent implements OnInit {
         : ''
     })
     this.settingsForm.reset();
+    this.activeModal.close();
+  }
+
+  close() {
+    this.settingsForm.reset();
+    this.activeModal.close();
+  }
+
+  confirmResetApplication() {
+    this.modalService.open(this.confirmReset);
+  }
+
+  reset() {
+    this.settingsService.resetApplication();
+    this.router.navigate(['/']);
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
     this.activeModal.close();
   }
 

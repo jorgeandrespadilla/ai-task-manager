@@ -58,6 +58,10 @@ export class AppSettingsService {
       });
   }
 
+  resetApplication(): void {
+    LocalStorageUtils.clear();
+  }
+
   private loadSettings(): Observable<AppSettings> {
     return of(LocalStorageUtils.load<AppSettings>(StorageKeys.settings))
       .pipe(

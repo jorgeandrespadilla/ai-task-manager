@@ -4,7 +4,7 @@
     type="button"
     class="btn-close"
     aria-label="Cerrar"
-    (click)="activeModal.dismiss()"
+    (click)="close()"
   ></button>
 </div>
 
@@ -35,19 +35,42 @@
   </form>
 </div>
 
-<div class="modal-footer">
+<div class="modal-footer justify-content-between">
   <button
     type="button"
-    class="btn btn-outline-secondary"
-    (click)="activeModal.close()"
+    class="btn link-danger"
+    (click)="confirmResetApplication()"
   >
-    Descartar
+    Restablecer
   </button>
-  <button
-    type="button"
-    class="btn btn-primary"
-    (click)="saveSettings()"
-  >
-    Guardar
-  </button>
+  <div class="d-flex align-items-center gap-3">
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="close()"
+    >
+      Descartar
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="saveSettings()"
+    >
+      Guardar
+    </button>
+  </div>
 </div>
+
+
+<ng-template #confirmReset let-activeModal>
+  <app-confirmation-dialog
+    [activeModal]="activeModal"
+    title="Restablecer aplicación"
+    (confirm)="reset()"
+    [danger]="true"
+  >
+    <p class="text-balanced mb-0">
+      ¿Está seguro que desea restablecer la aplicación? Esta acción no se puede deshacer y se perderán todos los datos.
+    </p>
+  </app-confirmation-dialog>
+</ng-template>
