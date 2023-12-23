@@ -43,6 +43,13 @@ export class TasksDetailService {
       );
   }
 
+  public isCategoryUsed(categoryId: string): Observable<boolean> {
+    return this.tasksService.getTasks().pipe(
+      take(1),
+      map(tasks => tasks.some(task => task.categoryId === categoryId))
+    );
+  }
+
   private getTaskWithCategory(task: Task): Observable<TaskDetail | null> {
     return this.categoriesService.getCategoryById(task.categoryId).pipe(
       map(category => {

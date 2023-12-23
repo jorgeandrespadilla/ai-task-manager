@@ -5,6 +5,7 @@ import { CategoriesService } from '../../../../services/categories/categories.se
 import { Category } from '../../../../shared/models/category.model';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TasksDetailService } from '../../../../services/tasks/tasks-detail.service';
 
 @Component({
   selector: 'app-category-detail',
@@ -25,7 +26,8 @@ export class CategoryDetailComponent implements OnInit {
     private router: Router,
     private toastService: ToastrService,
     private modalService: NgbModal,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private tasksDetailService: TasksDetailService
   ) { }
 
   ngOnInit(): void {
@@ -46,7 +48,15 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   confirmDeleteCategory() {
-    this.modalService.open(this.confirmDeletion);
+    this.tasksDetailService.isCategoryUsed(this.id).pipe(
+      tap(isUsed => {
+        if (isUsed) {
+          this.toastService.error('La categoría ya está en uso');
+          return;
+        }
+        this.modalService.open(this.confirmDeletion);
+      })
+    ).subscribe();
   }
 
   deleteCategory() {

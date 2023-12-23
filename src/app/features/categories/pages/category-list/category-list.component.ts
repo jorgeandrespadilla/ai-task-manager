@@ -4,6 +4,7 @@ import { tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { CategoriesService } from '../../../../services/categories/categories.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TasksDetailService } from '../../../../services/tasks/tasks-detail.service';
 
 @Component({
   selector: 'app-category-list',
@@ -22,6 +23,7 @@ export class CategoryListComponent {
     private toastService: ToastrService,
     private modalService: NgbModal,
     private categoriesService: CategoriesService,
+    private tasksDetailService: TasksDetailService
   ) { }
 
   get categories$() {
@@ -41,9 +43,17 @@ export class CategoryListComponent {
   }
 
   confirmDeleteCategory(categoryId: string) {
-    this.selectedCategoryId = categoryId;
-    const modalRef = this.modalService.open(this.confirmDeletion);
-    modalRef.dismissed.subscribe(() => this.cancelSelection());
+    this.tasksDetailService.isCategoryUsed(categoryId).pipe(
+      tap(isUsed => {
+        if (isUsed) {
+          this.toastService.error('La categoría ya está en uso');
+          return;
+        }
+        this.selectedCategoryId = categoryId;
+        const modalRef = this.modalService.open(this.confirmDeletion);
+        modalRef.dismissed.subscribe(() => this.cancelSelection());
+      })
+    ).subscribe();
   }
 
   cancelSelection() {
