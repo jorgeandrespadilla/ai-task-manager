@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { TasksService } from '../../../../services/tasks/tasks.service';
 import { tap } from 'rxjs';
+import { TasksDetailService } from '../../../../services/tasks/tasks-detail.service';
 
 @Component({
   selector: 'app-task-list',
@@ -22,10 +23,11 @@ export class TaskListComponent {
     private toastService: ToastrService,
     private modalService: NgbModal,
     private tasksService: TasksService,
+    private tasksDetailService: TasksDetailService,
   ) { }
 
   get tasks$() {
-    return this.tasksService.getTasks();
+    return this.tasksDetailService.getTasks();
   }
 
   addTask() {

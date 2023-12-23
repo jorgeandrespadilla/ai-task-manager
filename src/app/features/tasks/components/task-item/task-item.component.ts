@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Task } from '../../../../shared/models/task.model';
+import { TaskDetail } from '../../../../shared/models/task.model';
 
 @Component({
   selector: 'app-task-item',
@@ -9,7 +9,7 @@ import { Task } from '../../../../shared/models/task.model';
 export class TaskItemComponent {
 
   @Input({ required: true })
-  task!: Task;
+  task!: TaskDetail;
 
   @Input()
   isFirst: boolean = true;

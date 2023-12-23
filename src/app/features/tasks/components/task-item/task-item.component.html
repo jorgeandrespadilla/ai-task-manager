@@ -1,6 +1,9 @@
 <app-list-item  [isFirst]="isFirst" [isLast]="isLast">
   <div class="d-flex justify-content-between align-items-center gap-4">
-    <span class="text-truncate">{{ task.name }}</span>
+    <div class="d-flex align-items-center gap-2">
+      <span class="text-truncate">{{ task.name }}</span>
+      <span class="badge rounded-pill text-bg-secondary">{{ task.category.name }}</span>
+    </div>
     <div class="d-flex gap-3">
       <ng-content></ng-content>
     </div>
