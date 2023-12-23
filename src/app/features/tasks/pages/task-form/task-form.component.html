@@ -1,0 +1,72 @@
+<div class="d-flex flex-column gap-3 my-3">
+
+  <h2 class="display-7 mb-4">
+    @if (isEditing) {
+      Editar tarea
+    }
+    @else {
+    Nueva tarea
+    }
+  </h2>
+
+  <form [formGroup]="taskForm" class="d-flex flex-column gap-3">
+    <div>
+      <label class="form-label" for="name">Nombre</label>
+      <input class="form-control" type="text" id="name" formControlName="name">
+      @if (hasFieldErrors("name")) {
+      <div class="form-text text-danger">
+        {{ getFieldError("name") }}
+      </div>
+      }
+    </div>
+    <div>
+      <input
+        class="form-check-input me-2"
+        type="checkbox"
+        formControlName="completed"
+      />
+      <label class="form-label">Completado</label>
+      @if (hasFieldErrors("name")) {
+        <div class="form-text text-danger">
+          {{ getFieldError("name") }}
+        </div>
+      }
+    </div>
+    <div>
+      <label class="form-label" for="categoryId">Categoría</label>
+      <select class="form-select" id="categoryId" formControlName="categoryId">
+        <option value="" disabled selected hidden >Seleccione una opción...</option>
+        @for (item of categories | async; track $index) {
+          <option [value]="item.id">{{ item.name }}</option>
+        }
+        @empty {
+          <option value="" disabled selected hidden >No se encontraron categorías</option>
+        }
+      </select>
+      @if (hasFieldErrors("categoryId")) {
+        <div class="form-text text-danger">
+          {{ getFieldError("categoryId") }}
+        </div>
+      }
+    </div>
+    <div>
+      <label class="form-label" for="description">Descripción</label>
+      <textarea class="form-control" rows="5" id="description" formControlName="description"></textarea>
+      @if (hasFieldErrors("description")) {
+      <div class="form-text text-danger">
+        {{ getFieldError("description") }}
+      </div>
+      }
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-end mt-3 gap-3">
+    <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+      Cancelar
+    </button>
+    <button type="button" class="btn btn-primary" (click)="saveTask()">
+      Guardar
+    </button>
+  </div>
+
+</div>

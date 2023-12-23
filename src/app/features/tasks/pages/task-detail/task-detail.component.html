@@ -1,0 +1,55 @@
+<div class="d-flex flex-column gap-3 my-3">
+
+  <h2 class="display-7 mb-4">
+    Detalle de tarea
+  </h2>
+
+  @if (task) {
+    <div class="d-flex justify-content-end gap-3">
+      <button type="button" class="btn btn-outline-primary" (click)="editTask()">
+        <i class="bi bi-pencil"></i>
+        <span class="ms-2">Editar</span>
+      </button>
+      <button type="button" class="btn btn-outline-danger" (click)="confirmDeleteTask()">
+        <i class="bi bi-trash"></i>
+        <span class="ms-2">Eliminar</span>
+      </button>
+    </div>
+
+    <div class="d-flex flex-column gap-4">
+      <div class="d-flex flex-column gap-2 mb-3">
+        <div class="fw-semibold text-uppercase text-light-adaptative">Nombre</div>
+        <div>{{ task.name }}</div>
+      </div>
+      <div class="d-flex flex-column gap-2 mb-3">
+        <div class="fw-semibold text-uppercase">Estado</div>
+        <div>{{ task.completed ? 'Completada' : 'Pendiente' }}</div>
+      </div>
+      <div class="d-flex flex-column gap-2 mb-3">
+        <div class="fw-semibold text-uppercase">Categoría</div>
+        <div>{{ task.category.name }}</div>
+      </div>
+      <div class="d-flex flex-column gap-2">
+        <div class="fw-semibold text-uppercase">Descripción</div>
+        <div>{{ task.description }}</div>
+      </div>
+    </div>
+  }
+  @else {
+    <div class="d-flex justify-content-center align-items-center">
+      <span class="text-muted">No se encontró la tarea</span>
+    </div>
+  }
+
+</div>
+
+<ng-template #confirmDeletion let-activeModal>
+  <app-confirmation-dialog
+    [activeModal]="activeModal"
+    title="Eliminar tarea"
+    (confirm)="deleteTask()"
+    [danger]="true"
+  >
+    ¿Está seguro que desea eliminar la tarea?
+  </app-confirmation-dialog>
+</ng-template>

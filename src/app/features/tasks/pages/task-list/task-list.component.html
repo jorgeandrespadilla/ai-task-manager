@@ -1,0 +1,55 @@
+<div class="d-flex flex-column gap-3 my-3">
+
+  <h2 class="display-7 mb-4">
+    Tareas
+  </h2>
+
+  <div class="d-flex justify-content-end gap-3">
+    <button type="button" class="btn btn-primary" (click)="addTask()">
+      <i class="bi bi-plus-lg"></i>
+      <span class="ms-2">Agregar</span>
+    </button>
+  </div>
+
+  <ul class="d-flex flex-column list-unstyled">
+    @for (item of tasks$ | async; track $index; let isFirst = $first; let isLast = $last) {
+      <li>
+        <app-task-item [task]="item" [isFirst]="isFirst" [isLast]="isLast">
+          <div class="d-flex gap-3">
+            <button type="button" class="btn btn-outline-primary" (click)="viewTask(item.id)">
+              <i class="bi bi-eye"></i>
+            </button>
+            <button type="button" class="btn btn-outline-secondary" (click)="editTask(item.id)">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger" (click)="confirmDeleteTask(item.id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </app-task-item>
+      </li>
+    }
+    @empty {
+      <li>
+        <app-list-item>
+          <div class="d-flex justify-content-center align-items-center">
+           <span class="text-muted">No se encontraron tareas</span>
+          </div>
+        </app-list-item>
+      </li>
+    }
+  </ul>
+
+</div>
+
+<ng-template #confirmDeletion let-activeModal>
+  <app-confirmation-dialog
+    [activeModal]="activeModal"
+    title="Eliminar tarea"
+    (cancel)="cancelSelection()"
+    (confirm)="deleteTask()"
+    [danger]="true"
+  >
+    ¿Está seguro que desea eliminar la tarea?
+  </app-confirmation-dialog>
+</ng-template>

@@ -5,11 +5,17 @@ import { TasksRoutingModule } from './tasks-routing.module';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { SharedModule } from '../../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskListComponent } from './pages/task-list/task-list.component';
+import { TaskFormComponent } from './pages/task-form/task-form.component';
+import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
 
 
 @NgModule({
   declarations: [
-    TaskItemComponent
+    TaskItemComponent,
+    TaskListComponent,
+    TaskFormComponent,
+    TaskDetailComponent
   ],
   imports: [
     CommonModule,

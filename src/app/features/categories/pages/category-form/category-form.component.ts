@@ -100,6 +100,7 @@ export class CategoryFormComponent implements OnInit {
     }).pipe(
       tap(() => {
         this.toastService.success('Categoría actualizada');
+        this.goToPreviousPage();
       })
     ).subscribe();
   }
