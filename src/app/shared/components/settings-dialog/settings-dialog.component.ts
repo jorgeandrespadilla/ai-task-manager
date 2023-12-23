@@ -28,7 +28,7 @@ export class SettingsDialogComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public settingsService: AppSettingsService,
+    private settingsService: AppSettingsService,
     public activeModal: NgbActiveModal
   ) { }
 

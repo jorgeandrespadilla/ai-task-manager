@@ -1,0 +1,8 @@
+<div
+  [ngClass]="{
+    'border-start border-end border-bottom px-4 py-3 bg-light-adaptive': true,
+    'border-top rounded-top-3': isFirst,
+    'rounded-bottom-3': isLast
+  }">
+  <ng-content></ng-content>
+</div>
