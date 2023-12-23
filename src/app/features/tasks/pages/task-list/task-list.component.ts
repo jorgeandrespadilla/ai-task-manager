@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TasksService } from '../../../../services/tasks/tasks.service';
 import { tap } from 'rxjs';
 import { TasksDetailService } from '../../../../services/tasks/tasks-detail.service';
+import { TaskStatusChange } from '../../../../shared/models/task.model';
 
 @Component({
   selector: 'app-task-list',
@@ -40,6 +41,13 @@ export class TaskListComponent {
 
   editTask(taskId: string) {
     this.router.navigate(['tasks', 'edit', taskId]);
+  }
+
+  onChangeTaskStatus(statusChange: TaskStatusChange) {
+    this.tasksService.updateTask({
+      id: statusChange.taskId,
+      completed: statusChange.completed
+    }).subscribe();
   }
 
   confirmDeleteTask(taskId: string) {

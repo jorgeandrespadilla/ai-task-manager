@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TaskListComponent } from './pages/task-list/task-list.component';
 import { TaskFormComponent } from './pages/task-form/task-form.component';
 import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
     CommonModule,
     ReactiveFormsModule,
     TasksRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbTooltipModule
   ]
 })
 export class TasksModule { }

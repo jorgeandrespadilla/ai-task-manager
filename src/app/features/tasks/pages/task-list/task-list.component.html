@@ -14,7 +14,12 @@
   <ul class="d-flex flex-column list-unstyled">
     @for (item of tasks$ | async; track $index; let isFirst = $first; let isLast = $last) {
       <li>
-        <app-task-item [task]="item" [isFirst]="isFirst" [isLast]="isLast">
+        <app-task-item
+          [task]="item"
+          [isFirst]="isFirst"
+          [isLast]="isLast"
+          (statusChanged)="onChangeTaskStatus($event)"
+        >
           <div class="d-flex gap-3">
             <button type="button" class="btn btn-outline-primary" (click)="viewTask(item.id)">
               <i class="bi bi-eye"></i>

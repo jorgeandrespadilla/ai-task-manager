@@ -36,3 +36,8 @@ export interface UpdateTask {
   completed?: boolean;
   categoryId?: string;
 }
+
+export interface TaskStatusChange {
+  taskId: string;
+  completed: boolean;
+}

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { TaskDetail } from '../../../../shared/models/task.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TaskDetail, TaskStatusChange } from '../../../../shared/models/task.model';
 
 @Component({
   selector: 'app-task-item',
@@ -17,7 +17,14 @@ export class TaskItemComponent {
   @Input()
   isLast: boolean = true;
 
+  @Output()
+  statusChanged: EventEmitter<TaskStatusChange> = new EventEmitter<TaskStatusChange>();
+
   changeTaskStatus(): void {
+    this.statusChanged.emit({
+      taskId: this.task.id,
+      completed: !this.task.completed
+    });
   }
 
 }
