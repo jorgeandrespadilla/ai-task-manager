@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TaskListComponent } from './pages/task-list/task-list.component';
 import { TaskFormComponent } from './pages/task-form/task-form.component';
 import { TaskDetailComponent } from './pages/task-detail/task-detail.component';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     TasksRoutingModule,
     SharedModule,
+    NgbCollapseModule,
     NgbTooltipModule
   ]
 })

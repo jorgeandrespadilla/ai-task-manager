@@ -102,8 +102,7 @@ export class CategoryListComponent implements OnInit {
     this.router.navigate([], {
       queryParams: {
         name: this.filterName === '' ? null : this.filterName
-      },
-      queryParamsHandling: 'merge'
+      }
     });
   }
 
