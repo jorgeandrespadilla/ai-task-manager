@@ -4,10 +4,19 @@
     Categorías
   </h2>
 
-  <div class="d-flex justify-content-end gap-3">
+  <div class="d-flex justify-content-between gap-3">
+    <form class="d-flex gap-3" [formGroup]="filterForm">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar categoría"
+        aria-label="Buscar categoría"
+        formControlName="name"
+      />
+    </form>
     <button type="button" class="btn btn-primary" (click)="addCategory()">
       <i class="bi bi-plus-lg"></i>
-      <span class="ms-2">Agregar</span>
+      <span class="ms-2 d-none d-sm-inline">Agregar</span>
     </button>
   </div>
 

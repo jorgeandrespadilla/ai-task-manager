@@ -1,17 +1,22 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { tap } from 'rxjs';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { CategoriesService } from '../../../../services/categories/categories.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TasksDetailService } from '../../../../services/tasks/tasks-detail.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
   styleUrl: './category-list.component.scss',
 })
-export class CategoryListComponent {
+export class CategoryListComponent implements OnInit {
+
+  filterForm = this.fb.group({
+    name: ['']
+  });
 
   selectedCategoryId?: string;
 
@@ -19,15 +24,36 @@ export class CategoryListComponent {
   confirmDeletion!: ElementRef;
 
   constructor(
+    private fb: FormBuilder,
     private router: Router,
+    private activatedroute:ActivatedRoute,
     private toastService: ToastrService,
     private modalService: NgbModal,
     private categoriesService: CategoriesService,
     private tasksDetailService: TasksDetailService
   ) { }
 
+  ngOnInit(): void {
+    this.activatedroute.queryParams.subscribe(params => {
+      this.filterForm.patchValue({
+        name: params['name'] ?? ''
+      });
+    });
+    this.filterForm.valueChanges.subscribe(() => {
+      this.updateQueryParams();
+    });
+  }
+
   get categories$() {
-    return this.categoriesService.getCategories();
+    return this.categoriesService.getCategories().pipe(
+      map(categories => categories
+        .filter(category => category.name.includes(this.filterName))
+      )
+    );
+  }
+
+  get filterName() {
+    return this.filterForm.value.name ?? '';
   }
 
   addCategory() {
@@ -70,6 +96,15 @@ export class CategoryListComponent {
         this.cancelSelection();
       })
     ).subscribe();
+  }
+
+  private updateQueryParams() {
+    this.router.navigate([], {
+      queryParams: {
+        name: this.filterName === '' ? null : this.filterName
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 
 }
