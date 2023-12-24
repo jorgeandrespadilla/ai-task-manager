@@ -15,8 +15,11 @@
     @for (item of categories$ | async; track $index; let isFirst = $first; let isLast = $last) {
       <li>
         <app-list-item [isFirst]="isFirst" [isLast]="isLast">
-          <div class="d-flex justify-content-between align-items-center gap-4">
-            <span class="text-truncate">{{ item.name }}</span>
+          <div class="d-flex flex-column justify-content-between align-items-center gap-3">
+            <div class="d-flex justify-content-between gap-4 w-100">
+              <div class="text-truncate">{{ item.name }}</div>
+              <div class="text-muted">{{ item.createdAt | date: 'dd/MM/yyyy' }}</div>
+            </div>
             <div class="d-flex gap-3">
               <button type="button" class="btn btn-outline-primary" (click)="viewCategory(item.id)">
                 <i class="bi bi-eye"></i>
