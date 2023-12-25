@@ -12,6 +12,11 @@ export const MENU_ITEMS: MenuItem[] = [
     icon: 'bi-tags',
     link: 'categories',
   },
+  {
+    label: 'Asistente de IA',
+    icon: 'bi-stars',
+    link: 'ai',
+  },
 ];
 
 export const THEME_OPTIONS: DropdownItem[] = [

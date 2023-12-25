@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('./features/categories/categories.module').then(m => m.CategoriesModule)
       },
       {
+        path: 'ai',
+        loadChildren: () => import('./features/ai/ai.module').then(m => m.AiModule)
+      },
+      {
         path: '**',
         redirectTo: 'tasks'
       }
