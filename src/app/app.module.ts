@@ -9,6 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
+export function playerFactory(): any {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -25,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [],
   bootstrap: [AppComponent]

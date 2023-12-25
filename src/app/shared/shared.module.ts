@@ -5,6 +5,8 @@ import { SettingsDialogComponent } from './components/settings-dialog/settings-d
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { LottieAnimationComponent } from './components/lottie-animation/lottie-animation.component';
+import { LottieComponent } from 'ngx-lottie';
 
 
 @NgModule({
@@ -12,16 +14,19 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     SettingsDialogComponent,
     ListItemComponent,
     ConfirmationDialogComponent,
+    LottieAnimationComponent,
   ],
   imports: [
     CommonModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LottieComponent,
   ],
   exports: [
     SettingsDialogComponent,
     ListItemComponent,
     ConfirmationDialogComponent,
+    LottieAnimationComponent,
   ]
 })
 export class SharedModule { }
