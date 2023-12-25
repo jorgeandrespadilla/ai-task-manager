@@ -1,5 +1,7 @@
 # Gestor de Tareas Asistido por IA
 
+![image](https://github.com/jorgeandrespadilla/ai-task-manager/assets/58148764/ac79d067-b3b5-4635-9a62-8eb4b9fffefd)
+
 ## Descripción
 
 Este es una aplicación de gestión de tareas asistada por IA, construida con Angular 17. La aplicación debe permitir al usuario agregar, editar, eliminar y marcar como completas/incompletas las tareas. Además, las tareas deben poder clasificarse en categorías.
