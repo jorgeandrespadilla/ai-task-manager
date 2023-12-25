@@ -10,11 +10,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
 import { LottieModule } from 'ngx-lottie';
-import player from 'lottie-web';
-
-export function playerFactory(): any {
-  return player;
-}
+import { playerFactory } from './shared/utils/lottie';
 
 @NgModule({
   declarations: [
