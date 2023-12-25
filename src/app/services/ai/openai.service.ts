@@ -17,8 +17,18 @@ export class OpenAIService {
   ) {
   }
 
-  public generateTasks(description: string): Observable<string | null> {
-    return this.generateCompletion(PROMPTS.generateTasks(), description);
+  public generateTasks(description: string): Observable<string[]> {
+    return this.generateCompletion(
+      PROMPTS.generateTasks(),
+      description
+    ).pipe(
+      map(tasks => (tasks ?? '')
+        .replaceAll('-', '')
+        .split('\n')
+        .map(task => task.trim())
+        .filter(task => task.length > 0)
+      ),
+    );
   }
 
   private generateCompletion(encodedPrompt: string, input: string): Observable<string | null> {
@@ -72,11 +82,11 @@ export class OpenAIService {
   private getChatCompletion(client: OpenAI, messages: Array<ChatCompletionMessageParam>): Observable<string | null> {
     return from(
       client.chat.completions.create({
-      model: OPENAI_PARAMETERS.model,
-      max_tokens: OPENAI_PARAMETERS.maxTokens,
-      temperature: OPENAI_PARAMETERS.temperature,
-      top_p: OPENAI_PARAMETERS.topP,
-      messages: messages,
+        model: OPENAI_PARAMETERS.model,
+        max_tokens: OPENAI_PARAMETERS.maxTokens,
+        temperature: OPENAI_PARAMETERS.temperature,
+        top_p: OPENAI_PARAMETERS.topP,
+        messages: messages,
       })
     ).pipe(
       map(chatCompletion => chatCompletion.choices[0]?.message.content ?? null),

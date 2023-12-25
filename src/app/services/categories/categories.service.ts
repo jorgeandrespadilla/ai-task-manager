@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AddCategory, Category, RawCategory, UpdateCategory } from '../../shared/models/category.model';
 import { Observable, map, of } from 'rxjs';
+import { AddCategory, Category, RawCategory, UpdateCategory } from '../../shared/models/category.model';
 import { LocalStorageUtils } from '../../shared/utils/storage';
 import { StorageKeys } from '../../shared/enums/storage.enum';
 import { UUID } from '../../shared/utils/uuid';
@@ -71,6 +71,12 @@ export class CategoriesService {
           this.saveCategories(categories);
         })
       );
+  }
+
+  public findCategoryByName(name: string): Observable<Category | null> {
+    return this.getCategories().pipe(
+      map(categories => categories.find(category => category.name === name) ?? null)
+    );
   }
 
   private loadCategories(): Observable<Category[]> {

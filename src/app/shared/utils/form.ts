@@ -5,6 +5,7 @@ type ErrorMessages = Record<string, (data: any) => string>;
 const FORM_ERROR_MESSAGES: ErrorMessages = {
   'required': _data => 'Este campo es requerido',
   'minlength': data => `Este campo debe tener al menos ${data.requiredLength} caracteres`,
+  'maxlength': data => `Este campo debe tener como máximo ${data.requiredLength} caracteres`,
   'min': data => `El valor mínimo es ${data.min}`,
 };
 
