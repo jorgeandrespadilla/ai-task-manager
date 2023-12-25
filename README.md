@@ -44,7 +44,7 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 -	La aplicación desarrollada es responsiva.
 -	La aplicación permite manejar tema claro y oscuro.
 -	Se crearon pruebas unitarias para el componente encargado de mostrar las tareas de la aplicación.
--	Se creó una prueba de integración para validar el funcionamiento del listado de tareas.
+-	Se creó una prueba de integración para validar la creación de tareas y su despliegue en la lista de tareas.
 
 ## Pre-requisitos
 

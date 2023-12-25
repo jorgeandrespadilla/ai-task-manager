@@ -59,13 +59,13 @@
     <li>
       <app-task-item [task]="item" [isFirst]="isFirst" [isLast]="isLast" (statusChanged)="onChangeTaskStatus($event)">
         <div class="d-flex gap-3">
-          <button type="button" class="btn btn-outline-primary" (click)="viewTask(item.id)">
+          <button type="button" class="btn btn-outline-primary" task="Ver" (click)="viewTask(item.id)">
             <i class="bi bi-eye"></i>
           </button>
-          <button type="button" class="btn btn-outline-secondary" (click)="editTask(item.id)">
+          <button type="button" class="btn btn-outline-secondary" title="Editar" (click)="editTask(item.id)">
             <i class="bi bi-pencil"></i>
           </button>
-          <button type="button" class="btn btn-outline-danger" (click)="confirmDeleteTask(item.id)">
+          <button type="button" class="btn btn-outline-danger" title="Eliminar" (click)="confirmDeleteTask(item.id)">
             <i class="bi bi-trash"></i>
           </button>
         </div>

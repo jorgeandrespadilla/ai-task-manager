@@ -30,13 +30,13 @@
               <div class="text-muted">{{ item.createdAt | date: 'dd/MM/yyyy' }}</div>
             </div>
             <div class="d-flex gap-3">
-              <button type="button" class="btn btn-outline-primary" (click)="viewCategory(item.id)">
+              <button type="button" class="btn btn-outline-primary" title="Ver" (click)="viewCategory(item.id)">
                 <i class="bi bi-eye"></i>
               </button>
-              <button type="button" class="btn btn-outline-secondary" (click)="editCategory(item.id)">
+              <button type="button" class="btn btn-outline-secondary" title="Editar" (click)="editCategory(item.id)">
                 <i class="bi bi-pencil"></i>
               </button>
-              <button type="button" class="btn btn-outline-danger" (click)="confirmDeleteCategory(item.id)">
+              <button type="button" class="btn btn-outline-danger" title="Eliminar" (click)="confirmDeleteCategory(item.id)">
                 <i class="bi bi-trash"></i>
               </button>
             </div>
