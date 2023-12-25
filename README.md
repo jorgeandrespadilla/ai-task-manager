@@ -28,7 +28,8 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 5.	**Categorías:**
 -	Implementar la posibilidad de agregar/editar/eliminar categorías.
 -	Asignar categorías a las tareas.
-6.	Persistencia de Datos:
+
+6.	**Persistencia de Datos:**
 -	Implementar almacenamiento de datos para conservar las tareas.
 
 7.	**Filtrado y Ordenamiento:**
