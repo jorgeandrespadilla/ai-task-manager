@@ -53,7 +53,6 @@ export class SettingsDialogComponent implements OnInit {
     ]).pipe(
       take(1),
       tap(([aiAssistanceEnabled, openAISettings]) => {
-        console.log(aiAssistanceEnabled, openAISettings);
         this.settingsForm.patchValue({
           enableAIAssistance: aiAssistanceEnabled,
           openAIApiKey: openAISettings?.apiKey ?? ''

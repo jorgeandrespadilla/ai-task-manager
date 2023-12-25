@@ -30,6 +30,10 @@ $gray-50: #fafafb !default;
   font-size: 1.75rem;
 }
 
+.fs-7 {
+  font-size: 0.75rem;
+}
+
 @include color-mode(dark) {
 
   .text-light-adaptative {

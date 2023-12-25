@@ -17,9 +17,15 @@
         formControlName="enableAIAssistance"
       />
       <label class="form-check-label">Habilitar asistencia con IA</label>
+      <p class="text-muted fs-7">
+        Las configuraciones de OpenAI se guardarán de forma local en el navegador.
+      </p>
     </div>
     <div class="mb-3" *ngIf="settingsForm.get('enableAIAssistance')?.value">
-      <label for="openAIApiKey" class="form-label">API Key de OpenAI</label>
+      <label for="openAIApiKey" class="form-label">
+        <i class="bi bi-key me-1"></i>
+        API Key de OpenAI
+      </label>
       <input
         type="text"
         class="form-control"
