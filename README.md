@@ -73,8 +73,8 @@ Ejecuta `ng build` para construir/empaquetar el proyecto. Los artefactos de cons
 
 ## Ejecución de pruebas unitarias
 
-Ejecuta `ng test` para ejecutar las pruebas unitarias a través de [Karma](https://karma-runner.github.io).
+Ejecuta `ng test` para ejecutar las pruebas unitarias usando [Karma](https://karma-runner.github.io).
 
 ## Ejecución de pruebas de integración
 
-Ejecuta `ng e2e` para ejecutar las pruebas de integración a través de una plataforma de tu elección. Para usar este comando, primero debes agregar un paquete que implemente las capacidades de pruebas de integración.
+Ejecuta `ng e2e` para ejecutar las pruebas de integración usando [Cypress](https://www.cypress.io/).
