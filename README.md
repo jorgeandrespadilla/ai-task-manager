@@ -4,7 +4,7 @@
 
 ## Descripción
 
-Este es una aplicación de gestión de tareas asistada por IA, construida con Angular 17. La aplicación debe permitir al usuario agregar, editar, eliminar y marcar como completas/incompletas las tareas. Además, las tareas deben poder clasificarse en categorías.
+Este es una aplicación de gestión de tareas asistida por IA, construida con Angular 17. La aplicación debe permitir al usuario agregar, editar, eliminar y marcar como completas/incompletas las tareas. Además, las tareas deben poder clasificarse en categorías.
 
 La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA para generar tareas en base a la descripción de lo que desea realizar. Además, permitirá obtener sugerencias sobre una tarea en particular para ayudar al usuario a completarla. Para hacer uso de las características de IA de la aplicación, el usuario deberá proporcionar un API Key de OpenAI.
 
@@ -46,10 +46,10 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 **Extras:**
 
 - La aplicación desarrollada es una PWA.
--	La aplicación desarrollada es responsiva.
--	La aplicación permite manejar tema claro y oscuro.
--	Se crearon pruebas unitarias para el componente encargado de mostrar las tareas de la aplicación.
--	Se creó una prueba de integración para validar la creación de tareas y su despliegue en la lista de tareas.
+- La aplicación desarrollada es responsiva.
+- La aplicación permite manejar tema claro y oscuro.
+- Se crearon pruebas unitarias para el componente encargado de mostrar las tareas de la aplicación.
+- Se creó una prueba de integración para validar la creación de tareas y su despliegue en la lista de tareas.
 - Se creó flujos de despliegue automatizado para la aplicación en GitHub Actions (CI/CD).
 
 ## Pre-requisitos
