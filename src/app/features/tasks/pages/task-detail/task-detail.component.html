@@ -40,7 +40,7 @@
         <div>{{ task.description }}</div>
       </div>
     </div>
-    @if (isAIEnabled | async) {
+    @if (!task.completed && (isAIEnabled | async)) {
       <app-task-suggestion [task]="task" class="mt-3" />
     }
   }
