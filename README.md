@@ -48,6 +48,7 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 -	La aplicación permite manejar tema claro y oscuro.
 -	Se crearon pruebas unitarias para el componente encargado de mostrar las tareas de la aplicación.
 -	Se creó una prueba de integración para validar la creación de tareas y su despliegue en la lista de tareas.
+- Se creó flujos de despliegue automatizado para la aplicación en GitHub Actions (CI/CD).
 
 ## Pre-requisitos
 
