@@ -3,10 +3,11 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { TaskDetail } from '../../../../shared/models/task.model';
 import { TasksDetailService } from '../../../../services/tasks/tasks-detail.service';
 import { TasksService } from '../../../../services/tasks/tasks.service';
+import { AppSettingsService } from '../../../../services/settings/app-settings.service';
 
 @Component({
   selector: 'app-task-detail',
@@ -29,7 +30,8 @@ export class TaskDetailComponent {
     private toastService: ToastrService,
     private modalService: NgbModal,
     private tasksService: TasksService,
-    private tasksDetailService: TasksDetailService
+    private tasksDetailService: TasksDetailService,
+    private settingsService: AppSettingsService
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +46,11 @@ export class TaskDetailComponent {
       })
     ).subscribe();
   }
+
+  get isAIEnabled(): Observable<boolean> {
+    return this.settingsService.isAIAssistanceEnabled();
+  }
+
 
   editTask(): void {
     this.router.navigate(['tasks', 'edit', this.id]);

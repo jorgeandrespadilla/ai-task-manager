@@ -6,6 +6,7 @@ import { APIError } from 'openai/error';
 import { AppSettingsService } from '../settings/app-settings.service';
 import { OPENAI_PARAMETERS, PROMPTS } from '../../shared/constants/ai';
 import { ConversationRole } from '../../shared/enums/conversation-role.enum';
+import { TaskDetail } from '../../shared/models/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,24 @@ export class OpenAIService {
         .filter(task => task.length > 0)
       ),
     );
+  }
+
+  public generateSuggestedPlan(task: TaskDetail): Observable<string> {
+    return this.generateCompletion(
+      PROMPTS.generateTaskSuggestion(),
+      this.formatTask(task)
+    ).pipe(
+      map(summary => summary ?? 'No fue posible generar una sugerencia para esta tarea.')
+    );
+  }
+
+  private formatTask(task: TaskDetail): string {
+    return `
+Tarea: ${task.name}
+Descripción: ${task.description}
+Categoría: ${task.category}
+Estado: ${task.completed ? 'Completada' : 'Pendiente'}
+    `.trim();
   }
 
   private generateCompletion(encodedPrompt: string, input: string): Observable<string | null> {

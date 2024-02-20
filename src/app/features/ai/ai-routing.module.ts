@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AiAssistantComponent } from './pages/ai-assistant/ai-assistant.component';
-import { isAiAssistanceEnabledGuard } from './guards/isAuthenticated.guard';
+import { isAiAssistanceEnabledGuard } from './guards/isAiAssistanceEnabled.guard';
 
 const routes: Routes = [
   {

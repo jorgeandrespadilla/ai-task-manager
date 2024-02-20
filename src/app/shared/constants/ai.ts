@@ -1,5 +1,3 @@
-import { SelectOption } from "../models/ui.model";
-
 export const OPENAI_PARAMETERS = {
   model: 'gpt-3.5-turbo',
   temperature: 0.5,
@@ -22,6 +20,19 @@ Assistant:
 - Take guitar lessons
 - Practice playing the guitar
   `).trim(),
+
+generateTaskSuggestion: () => (`
+${INITIAL_PROMPT}
+
+Fecha actual: ${new Date().toLocaleDateString('es-ES', {
+  dateStyle: 'full',
+})}
+Hora actual: ${new Date().toLocaleTimeString('es-ES', {
+  timeStyle: 'short',
+})}
+
+You will provide the user with a suggested plan for a task. You will receive a task, and you will suggest a plan for it. The plan should be short, and it should be related to the user's task. Use the same language that the user used. Give any suggestions or advice that you think would be helpful for accomplishing the task.
+`).trim(),
 };
 
 export const TASK_SUGGESTIONS: string[] = [
