@@ -1,0 +1,18 @@
+<div class="d-flex gap-3 justify-content-center align-items-center border border-2 border-secondary-subtle rounded-3 p-3 bg-subtle-adaptive">
+  <textarea [(ngModel)]="taskSuggestion" disabled class="form-control" style="min-height: 16rem;" [ngClass]="{ 'd-none': !taskSuggestion }"></textarea>
+
+  @if (!taskSuggestion && !isLoadingSuggestion) {
+    <button type="button" class="btn btn-primary d-flex my-3" (click)="generateSuggestion()">
+      <i class="bi bi-lightbulb"></i>
+      <span class="ms-2 d-sm-inline">Generar sugerencia</span>
+    </button>
+  }
+
+  @if (isLoadingSuggestion) {
+    <div class="d-flex justify-content-center">
+      <div class="lottie-container">
+        <app-lottie-animation animation="assets/sparkles.json" />
+      </div>
+    </div>
+  }
+</div>

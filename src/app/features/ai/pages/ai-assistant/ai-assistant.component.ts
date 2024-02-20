@@ -6,9 +6,8 @@ import { FormUtils } from '../../../../shared/utils';
 import { CategoriesService } from '../../../../services/categories/categories.service';
 import { TasksService } from '../../../../services/tasks/tasks.service';
 import { DEFAULT_CATEGORY } from '../../../../shared/constants/categories';
-import { Observable, catchError, map, of, switchMap, tap } from 'rxjs';
+import { Observable, catchError, of, switchMap, tap } from 'rxjs';
 import { Category } from '../../../../shared/models/category.model';
-import { Task } from '../../../../shared/models/task.model';
 
 @Component({
   selector: 'app-ai-assistant',
@@ -36,6 +35,10 @@ export class AiAssistantComponent {
     private categoriesService: CategoriesService,
     private tasksService: TasksService,
   ) { }
+
+  handleSuggestion(suggestion: string): void {
+    this.assistantForm.patchValue({ description: suggestion });
+  }
 
   generateTasks(): void {
     if (this.assistantForm.invalid) {

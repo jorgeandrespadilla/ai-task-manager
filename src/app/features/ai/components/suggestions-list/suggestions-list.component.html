@@ -1,0 +1,10 @@
+<div class="d-none d-sm-flex flex-column gap-2">
+  @for (suggestion of suggestions; track $index) {
+  <div class="d-block">
+    <button class="btn btn-sm btn-outline-primary rounded-2 px-3 text-start"
+      (click)="handleSuggestionClick(suggestion)">
+      {{ suggestion }}
+    </button>
+  </div>
+  }
+</div>

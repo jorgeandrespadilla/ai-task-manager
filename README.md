@@ -6,7 +6,7 @@
 
 Este es una aplicación de gestión de tareas asistada por IA, construida con Angular 17. La aplicación debe permitir al usuario agregar, editar, eliminar y marcar como completas/incompletas las tareas. Además, las tareas deben poder clasificarse en categorías.
 
-La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA para generar tareas en base a la descripción de lo que desea realizar. Además, permitirá sugerir categorías existentes para las tareas creadas. Para hacer uso de las características de IA de la aplicación, el usuario deberá proporcionar un API Key de OpenAI.
+La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA para generar tareas en base a la descripción de lo que desea realizar. Además, permitirá obtener sugerencias sobre una tarea en particular para ayudar al usuario a completarla. Para hacer uso de las características de IA de la aplicación, el usuario deberá proporcionar un API Key de OpenAI.
 
 **Requisitos:**
 
@@ -41,6 +41,7 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 - La página de asistencia por IA permitirá crear nuevas tareas en base a una descripción proporcionada por el usuario sobre lo que desea realizar.
 -	Las tareas creadas con IA podrán ser conservadas o descartadas por el usuario.
 -	Agregar diálogo de configuración para activar las características de IA. Este apartado permitirá activar/desactivar el asistente, así como configurar el API Key de OpenAI cuando la funcionalidad de IA esté activa. Estas configuraciones se almacenarán en el navegador del usuario.
+- En el detalle de cada tarea no completada, el usuario podrá usar el asistente de IA para obtener una sugerencia sobre cómo completar la tarea en base a su información (ej. plan de acción, pasos a seguir, etc.).
 
 **Extras:**
 
@@ -60,10 +61,7 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 ## Instalación
 
 1. Clona el repositorio
-   ```sh
-   git clone
-    ```
-2. Instala los paquetes NPM
+2. Instala los paquetes NPM:
     ```sh
     npm install
     ```
