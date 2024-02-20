@@ -23,3 +23,9 @@ Assistant:
 - Practice playing the guitar
   `).trim(),
 };
+
+export const TASK_SUGGESTIONS: string[] = [
+  "Quiero aprender a tocar la guitarra",
+  "Me gustaria organizar un viaje a la playa",
+  "Necesito mejorar mis habilidades de cocina",
+];

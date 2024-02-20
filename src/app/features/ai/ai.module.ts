@@ -4,11 +4,13 @@ import { AiAssistantComponent } from './pages/ai-assistant/ai-assistant.componen
 import { SharedModule } from '../../shared/shared.module';
 import { AiRoutingModule } from './ai-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SuggestionsListComponent } from './components/suggestions-list/suggestions-list.component';
 
 
 @NgModule({
   declarations: [
-    AiAssistantComponent
+    SuggestionsListComponent,
+    AiAssistantComponent,
   ],
   imports: [
     CommonModule,
