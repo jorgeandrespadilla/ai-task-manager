@@ -44,6 +44,7 @@ La aplicación ofrecerá al usuario la posibilidad de usar su asistente de IA pa
 
 **Extras:**
 
+- La aplicación desarrollada es una PWA.
 -	La aplicación desarrollada es responsiva.
 -	La aplicación permite manejar tema claro y oscuro.
 -	Se crearon pruebas unitarias para el componente encargado de mostrar las tareas de la aplicación.
