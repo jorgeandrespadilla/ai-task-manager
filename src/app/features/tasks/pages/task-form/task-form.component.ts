@@ -91,7 +91,6 @@ export class TaskFormComponent {
   }
 
   private addTask() {
-    console.log(this.taskForm.value)
     this.tasksService.addTask({
       description: this.taskForm.get('description')?.value!,
       name: this.taskForm.get('name')?.value!,
