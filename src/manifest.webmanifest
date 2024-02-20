@@ -1,6 +1,6 @@
 {
-  "name": "task-manager-app",
-  "short_name": "task-manager-app",
+  "name": "AI Task Manager",
+  "short_name": "AI Task Manager",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
