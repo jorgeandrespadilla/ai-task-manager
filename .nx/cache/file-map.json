@@ -1,0 +1,660 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.2.4",
+  "deps": {
+    "@angular/animations": "^17.2.1",
+    "@angular/common": "^17.2.1",
+    "@angular/compiler": "^17.2.1",
+    "@angular/core": "^17.2.1",
+    "@angular/forms": "^17.2.1",
+    "@angular/platform-browser": "^17.2.1",
+    "@angular/platform-browser-dynamic": "^17.2.1",
+    "@angular/router": "^17.2.1",
+    "@angular/service-worker": "^17.2.1",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "lottie-web": "^5.12.2",
+    "ngx-lottie": "^10.0.0",
+    "ngx-toastr": "^18.0.0",
+    "openai": "^4.24.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "uuid": "^9.0.1",
+    "zone.js": "~0.14.2",
+    "@angular-devkit/build-angular": "^17.2.0",
+    "@angular-eslint/builder": "17.3.0",
+    "@angular-eslint/eslint-plugin": "17.3.0",
+    "@angular-eslint/eslint-plugin-template": "17.3.0",
+    "@angular-eslint/schematics": "17.3.0",
+    "@angular-eslint/template-parser": "17.3.0",
+    "@angular/cli": "^17.2.0",
+    "@angular/compiler-cli": "^17.2.1",
+    "@angular/localize": "^17.2.1",
+    "@cypress/schematic": "^2.5.1",
+    "@types/jasmine": "~5.1.0",
+    "@types/uuid": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "7.2.0",
+    "@typescript-eslint/parser": "7.2.0",
+    "cypress": "latest",
+    "eslint": "^8.57.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.2.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "14645878845883387518"
+      },
+      {
+        "file": ".github/workflows/build-and-deploy.yml",
+        "hash": "3695061859155520801"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13044518069027839699"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "5331566439708925252"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17038929134016848735"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "5336636969995539451"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "9207269975092646934"
+      },
+      {
+        "file": "README.md",
+        "hash": "6961261407748669436"
+      },
+      {
+        "file": "angular.json",
+        "hash": "4339823142571566804"
+      },
+      {
+        "file": "cypress.config.ts",
+        "hash": "12008761518506397260"
+      },
+      {
+        "file": "cypress/e2e/tasks.cy.ts",
+        "hash": "1532610430458170170"
+      },
+      {
+        "file": "cypress/fixtures/example.json",
+        "hash": "13998363532807730308"
+      },
+      {
+        "file": "cypress/support/commands.ts",
+        "hash": "3746814855531474377"
+      },
+      {
+        "file": "cypress/support/e2e.ts",
+        "hash": "11317776768185203511"
+      },
+      {
+        "file": "cypress/tsconfig.json",
+        "hash": "4189024445535263569"
+      },
+      {
+        "file": "ngsw-config.json",
+        "hash": "9785530155750763730"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "3932483426686990159"
+      },
+      {
+        "file": "package.json",
+        "hash": "10801469814829676532"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "12086333738266403985"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "11958735616642380711"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "1295646098659108288"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "2086088297008093528"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "7003871051491923596"
+      },
+      {
+        "file": "src/app/core/components/nav-item/nav-item.component.html",
+        "hash": "3492363272240938720"
+      },
+      {
+        "file": "src/app/core/components/nav-item/nav-item.component.scss",
+        "hash": "9940374699909314905"
+      },
+      {
+        "file": "src/app/core/components/nav-item/nav-item.component.spec.ts",
+        "hash": "8098846481955440559"
+      },
+      {
+        "file": "src/app/core/components/nav-item/nav-item.component.ts",
+        "hash": "2981000576612393729"
+      },
+      {
+        "file": "src/app/core/components/theme-picker/theme-picker.component.html",
+        "hash": "6171278191779815908"
+      },
+      {
+        "file": "src/app/core/components/theme-picker/theme-picker.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/core/components/theme-picker/theme-picker.component.spec.ts",
+        "hash": "7138813167552222321"
+      },
+      {
+        "file": "src/app/core/components/theme-picker/theme-picker.component.ts",
+        "hash": "17106019468844182040"
+      },
+      {
+        "file": "src/app/core/components/top-bar/top-bar.component.html",
+        "hash": "17012471687342889401"
+      },
+      {
+        "file": "src/app/core/components/top-bar/top-bar.component.scss",
+        "hash": "2776802680473931420"
+      },
+      {
+        "file": "src/app/core/components/top-bar/top-bar.component.spec.ts",
+        "hash": "1431719246861905173"
+      },
+      {
+        "file": "src/app/core/components/top-bar/top-bar.component.ts",
+        "hash": "14881722701883569825"
+      },
+      {
+        "file": "src/app/core/core.module.ts",
+        "hash": "4213613818023245686"
+      },
+      {
+        "file": "src/app/core/layouts/main-layout/main-layout.component.html",
+        "hash": "13121504044716664253"
+      },
+      {
+        "file": "src/app/core/layouts/main-layout/main-layout.component.scss",
+        "hash": "11897359821575351640"
+      },
+      {
+        "file": "src/app/core/layouts/main-layout/main-layout.component.spec.ts",
+        "hash": "835365642568056973"
+      },
+      {
+        "file": "src/app/core/layouts/main-layout/main-layout.component.ts",
+        "hash": "273192010268825892"
+      },
+      {
+        "file": "src/app/features/ai/ai-routing.module.ts",
+        "hash": "15445197633114625446"
+      },
+      {
+        "file": "src/app/features/ai/ai.module.ts",
+        "hash": "1462081032969963054"
+      },
+      {
+        "file": "src/app/features/ai/components/suggestions-list/suggestions-list.component.html",
+        "hash": "17653590894539210113"
+      },
+      {
+        "file": "src/app/features/ai/components/suggestions-list/suggestions-list.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/ai/components/suggestions-list/suggestions-list.component.ts",
+        "hash": "18217347535689841377"
+      },
+      {
+        "file": "src/app/features/ai/guards/isAiAssistanceEnabled.guard.ts",
+        "hash": "3405333907362108220"
+      },
+      {
+        "file": "src/app/features/ai/pages/ai-assistant/ai-assistant.component.html",
+        "hash": "17361840580943361692"
+      },
+      {
+        "file": "src/app/features/ai/pages/ai-assistant/ai-assistant.component.scss",
+        "hash": "7387075496780662214"
+      },
+      {
+        "file": "src/app/features/ai/pages/ai-assistant/ai-assistant.component.ts",
+        "hash": "16746204439533238964"
+      },
+      {
+        "file": "src/app/features/categories/categories-routing.module.ts",
+        "hash": "16340091641870235342"
+      },
+      {
+        "file": "src/app/features/categories/categories.module.ts",
+        "hash": "10003691848724901660"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-detail/category-detail.component.html",
+        "hash": "7086906472693084434"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-detail/category-detail.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-detail/category-detail.component.ts",
+        "hash": "11836032679233453593"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-form/category-form.component.html",
+        "hash": "15721470169842587760"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-form/category-form.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-form/category-form.component.ts",
+        "hash": "14426112160099876846"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-list/category-list.component.html",
+        "hash": "9058240388673057771"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-list/category-list.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/categories/pages/category-list/category-list.component.ts",
+        "hash": "13178882638024293851"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-item/task-item.component.html",
+        "hash": "14211483413290689140"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-item/task-item.component.scss",
+        "hash": "15755985593314975132"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-item/task-item.component.spec.ts",
+        "hash": "12078961860325656510"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-item/task-item.component.ts",
+        "hash": "9676601153752678060"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-suggestion/task-suggestion.component.html",
+        "hash": "6733550833306332184"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-suggestion/task-suggestion.component.scss",
+        "hash": "7387075496780662214"
+      },
+      {
+        "file": "src/app/features/tasks/components/task-suggestion/task-suggestion.component.ts",
+        "hash": "4433290994967309718"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-detail/task-detail.component.html",
+        "hash": "8010658738777004281"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-detail/task-detail.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-detail/task-detail.component.ts",
+        "hash": "10476492678656982236"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-form/task-form.component.html",
+        "hash": "16383473948769019792"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-form/task-form.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-form/task-form.component.ts",
+        "hash": "4683936517664033020"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-list/task-list.component.html",
+        "hash": "14369846283038146036"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-list/task-list.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/features/tasks/pages/task-list/task-list.component.ts",
+        "hash": "5351311392039396618"
+      },
+      {
+        "file": "src/app/features/tasks/tasks-routing.module.ts",
+        "hash": "10770491774508717250"
+      },
+      {
+        "file": "src/app/features/tasks/tasks.module.ts",
+        "hash": "16318729654717210274"
+      },
+      {
+        "file": "src/app/services/ai/openai.service.ts",
+        "hash": "10635033226796918063"
+      },
+      {
+        "file": "src/app/services/categories/categories.service.ts",
+        "hash": "3331365322380360032"
+      },
+      {
+        "file": "src/app/services/settings/app-settings.service.ts",
+        "hash": "13521666515100917010"
+      },
+      {
+        "file": "src/app/services/tasks/tasks-detail.service.ts",
+        "hash": "178722046573497267"
+      },
+      {
+        "file": "src/app/services/tasks/tasks.service.ts",
+        "hash": "3085006625480509871"
+      },
+      {
+        "file": "src/app/services/ui/modal.service.ts",
+        "hash": "16746426374182559356"
+      },
+      {
+        "file": "src/app/services/ui/theme.service.ts",
+        "hash": "13018407280054840463"
+      },
+      {
+        "file": "src/app/shared/components/confirmation-dialog/confirmation-dialog.component.html",
+        "hash": "17495614912753202303"
+      },
+      {
+        "file": "src/app/shared/components/confirmation-dialog/confirmation-dialog.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/shared/components/confirmation-dialog/confirmation-dialog.component.spec.ts",
+        "hash": "14834197091937898008"
+      },
+      {
+        "file": "src/app/shared/components/confirmation-dialog/confirmation-dialog.component.ts",
+        "hash": "7024570097276418257"
+      },
+      {
+        "file": "src/app/shared/components/list-item/list-item.component.html",
+        "hash": "243266469404064807"
+      },
+      {
+        "file": "src/app/shared/components/list-item/list-item.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/shared/components/list-item/list-item.component.spec.ts",
+        "hash": "17115222939410287878"
+      },
+      {
+        "file": "src/app/shared/components/list-item/list-item.component.ts",
+        "hash": "8547495735525962606"
+      },
+      {
+        "file": "src/app/shared/components/lottie-animation/lottie-animation.component.html",
+        "hash": "5792794548531366332"
+      },
+      {
+        "file": "src/app/shared/components/lottie-animation/lottie-animation.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/shared/components/lottie-animation/lottie-animation.component.spec.ts",
+        "hash": "13174886876566759316"
+      },
+      {
+        "file": "src/app/shared/components/lottie-animation/lottie-animation.component.ts",
+        "hash": "6558336783724264624"
+      },
+      {
+        "file": "src/app/shared/components/settings-dialog/settings-dialog.component.html",
+        "hash": "4303583167025456863"
+      },
+      {
+        "file": "src/app/shared/components/settings-dialog/settings-dialog.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/shared/components/settings-dialog/settings-dialog.component.ts",
+        "hash": "1838968992010437865"
+      },
+      {
+        "file": "src/app/shared/constants/ai.ts",
+        "hash": "12773186786418116546"
+      },
+      {
+        "file": "src/app/shared/constants/categories.ts",
+        "hash": "6369308888790284802"
+      },
+      {
+        "file": "src/app/shared/constants/settings.ts",
+        "hash": "12613556043215177439"
+      },
+      {
+        "file": "src/app/shared/constants/tasks.ts",
+        "hash": "8205224110086454540"
+      },
+      {
+        "file": "src/app/shared/constants/ui.ts",
+        "hash": "1778644822498177908"
+      },
+      {
+        "file": "src/app/shared/constants/viewport.ts",
+        "hash": "4368828628627861359"
+      },
+      {
+        "file": "src/app/shared/enums/conversation-role.enum.ts",
+        "hash": "9228083879626470714"
+      },
+      {
+        "file": "src/app/shared/enums/storage.enum.ts",
+        "hash": "8448581119670263748"
+      },
+      {
+        "file": "src/app/shared/enums/task-state.enum.ts",
+        "hash": "7066248888449947163"
+      },
+      {
+        "file": "src/app/shared/enums/theme.enum.ts",
+        "hash": "2206040263775470205"
+      },
+      {
+        "file": "src/app/shared/enums/viewport.enum.ts",
+        "hash": "7789829611288396474"
+      },
+      {
+        "file": "src/app/shared/models/category.model.ts",
+        "hash": "16455302121906301529"
+      },
+      {
+        "file": "src/app/shared/models/openai-config.model.ts",
+        "hash": "829566906172340475"
+      },
+      {
+        "file": "src/app/shared/models/settings.model.ts",
+        "hash": "3352232746112344728"
+      },
+      {
+        "file": "src/app/shared/models/task.model.ts",
+        "hash": "16891840927776307268"
+      },
+      {
+        "file": "src/app/shared/models/ui.model.ts",
+        "hash": "6441896167465395724"
+      },
+      {
+        "file": "src/app/shared/shared.module.ts",
+        "hash": "6977439734633008652"
+      },
+      {
+        "file": "src/app/shared/styles/_bootstrap.scss",
+        "hash": "7245775567422633625"
+      },
+      {
+        "file": "src/app/shared/styles/_mixins.scss",
+        "hash": "3776637059321014988"
+      },
+      {
+        "file": "src/app/shared/styles/_toastr.scss",
+        "hash": "4180215463719494163"
+      },
+      {
+        "file": "src/app/shared/styles/_vendor.scss",
+        "hash": "6586564666970117217"
+      },
+      {
+        "file": "src/app/shared/utils/conversion.ts",
+        "hash": "725525306448457817"
+      },
+      {
+        "file": "src/app/shared/utils/encoding.ts",
+        "hash": "6436170144084470951"
+      },
+      {
+        "file": "src/app/shared/utils/form.ts",
+        "hash": "16245990943048759601"
+      },
+      {
+        "file": "src/app/shared/utils/index.ts",
+        "hash": "13309061152830130061"
+      },
+      {
+        "file": "src/app/shared/utils/json.ts",
+        "hash": "14091465261979774277"
+      },
+      {
+        "file": "src/app/shared/utils/lottie.ts",
+        "hash": "11676089304578667243"
+      },
+      {
+        "file": "src/app/shared/utils/storage.ts",
+        "hash": "9659150360093096947"
+      },
+      {
+        "file": "src/app/shared/utils/uuid.ts",
+        "hash": "18250458802528762219"
+      },
+      {
+        "file": "src/app/shared/utils/viewport.ts",
+        "hash": "356844453390480382"
+      },
+      {
+        "file": "src/app/shared/validators/conditional.validator.ts",
+        "hash": "2213290468289796728"
+      },
+      {
+        "file": "src/assets/icons/icon-128x128.png",
+        "hash": "16119513566521364320"
+      },
+      {
+        "file": "src/assets/icons/icon-144x144.png",
+        "hash": "7918264055681161054"
+      },
+      {
+        "file": "src/assets/icons/icon-152x152.png",
+        "hash": "15801439294603939434"
+      },
+      {
+        "file": "src/assets/icons/icon-192x192.png",
+        "hash": "5426725225393538606"
+      },
+      {
+        "file": "src/assets/icons/icon-384x384.png",
+        "hash": "14349113523743396697"
+      },
+      {
+        "file": "src/assets/icons/icon-512x512.png",
+        "hash": "15496412176428542718"
+      },
+      {
+        "file": "src/assets/icons/icon-72x72.png",
+        "hash": "8211841038932698272"
+      },
+      {
+        "file": "src/assets/icons/icon-96x96.png",
+        "hash": "17857169027528193372"
+      },
+      {
+        "file": "src/assets/sparkles.json",
+        "hash": "6643771634464892080"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "3988961587069885523"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "14307673194032412122"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "10534058702020715515"
+      },
+      {
+        "file": "src/manifest.webmanifest",
+        "hash": "12737759959265819994"
+      },
+      {
+        "file": "src/staticwebapp.config.json",
+        "hash": "12464862292841689218"
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "7710958175275409086"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "366722516949793923"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "11957383725372003677"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "5059954046679394591"
+      }
+    ]
+  }
+}
